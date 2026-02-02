@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Greg ❤️ Carole</title>
 
-  <!-- Confetti library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <style>
@@ -59,7 +58,6 @@
     h1 {
       font-size: clamp(26px, 4vw, 44px);
       margin: 12px 0 6px;
-      transition: opacity .4s ease;
     }
 
     .from {
@@ -88,9 +86,6 @@
       border: none;
       cursor: pointer;
       box-shadow: 0 10px 24px rgba(0,0,0,.14);
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform .12s ease, background .12s ease;
     }
 
     @keyframes softGlow {
@@ -105,8 +100,6 @@
       color: #fff;
       animation: softGlow 3s ease-in-out infinite;
     }
-
-    #yesBtn:hover { background: var(--yesHover); }
 
     #noBtn {
       left: 62%;
@@ -132,11 +125,6 @@
       margin: 10px 0;
     }
 
-    .result p {
-      font-size: 18px;
-      margin-top: 6px;
-    }
-
     .result img {
       width: min(300px, 90%);
       margin-top: 16px;
@@ -155,34 +143,6 @@
   <canvas id="confettiCanvas"></canvas>
 
   <main class="card">
-    <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="fur" x1="0" x2="1">
-          <stop offset="0" stop-color="#f7c7a1"/>
-          <stop offset="1" stop-color="#f2a97b"/>
-        </linearGradient>
-        <linearGradient id="heart" x1="0" x2="1">
-          <stop offset="0" stop-color="#ff4d7d"/>
-          <stop offset="1" stop-color="#ff1f68"/>
-        </linearGradient>
-      </defs>
-
-      <path d="M250 50 C250 33 270 25 282 38
-               C294 25 314 33 314 50
-               C314 78 282 92 282 106
-               C282 92 250 78 250 50Z"
-            fill="url(#heart)"/>
-
-      <path d="M90 120 C90 70 140 40 190 60
-               C240 40 290 70 290 120
-               C290 180 240 210 190 210
-               C140 210 90 180 90 120Z"
-            fill="url(#fur)"/>
-
-      <circle cx="160" cy="130" r="8"/>
-      <circle cx="220" cy="130" r="8"/>
-    </svg>
-
     <h1 id="mainHeading">Carole, will you be my Valentine? 💖</h1>
     <div class="from">With love, Greg ❤️</div>
 
@@ -195,7 +155,7 @@
 
     <section class="result" id="result">
       <h2>Looking forward to celebrating together ❤️</h2>
-      <img src="Propose I Love You GIF.gif" alt="Celebration" />
+      <img src="celebration.gif" alt="Celebration" />
     </section>
   </main>
 
