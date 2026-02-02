@@ -191,11 +191,10 @@
       <button id="noBtn">No</button>
     </section>
 
-    <div class="hint" id="hint">Some questions have only one answer.</div>
+    <div class="hint" id="hint">Some questions have only one answer.😉</div>
 
     <section class="result" id="result">
-      <h2>So happy you said yes ❤️</h2>
-      <p>Looking forward to celebrating together.</p>
+      <h2>Looking forward to celebrating together ❤️</h2>
       <img src="Propose I Love You GIF.gif" alt="Celebration" />
     </section>
   </main>
@@ -252,8 +251,8 @@
       let newLeft = (b.left - z.left) + dx * 140;
       let newTop  = (b.top - z.top) + dy * 140;
 
-      newLeft = Math.max(0, Math.min(newLeft, z.width - b.width));
-      newTop  = Math.max(0, Math.min(newTop, z.height - b.height));
+      newLeft = clamp(newLeft, 0, z.width - b.width);
+      newTop  = clamp(newTop, 0, z.height - b.height);
 
       noBtn.style.left = newLeft + "px";
       noBtn.style.top = newTop + "px";
@@ -273,7 +272,7 @@
 
     yesBtn.addEventListener("click", () => {
       heading.textContent =
-        "I’ll be smiling while I wait to hear from you — and I can’t wait to celebrate together ❤️";
+        "I’ll be smiling patiently (Okay, Not That Patiently) Until I Hear From You ❤️";
 
       zone.style.display = "none";
       hint.style.display = "none";
