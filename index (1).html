@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Greg ❤️ Carole</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --bg1: #ffd6e7;
+      --bg2: #ffeef6;
+      --card: #ffffffcc;
+      --yes: #ff3b7a;
+      --yesHover: #ff1f68;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+      padding: 16px;
+    }
+    #confettiCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .card {
+      width: min(720px, 92vw);
+      padding: 26px 22px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 18px 60px rgba(0,0,0,.15);
+    }
+    h1 { font-size: clamp(26px, 4vw, 44px); margin: 12px 0 6px; }
+    .from { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+    .button-zone { position: relative; width: min(520px, 92%); height: 150px; margin: 0 auto; }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px 24px;
+      font-size: 18px;
+      font-weight: 800;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+    }
+    #yesBtn { left: 18%; background: var(--yes); color: #fff; }
+    #noBtn { left: 62%; background: #e5e7eb; }
+    .result { display: none; margin-top: 18px; }
+    .result img {
+      width: min(300px, 90%);
+      margin-top: 16px;
+      border-radius: 18px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="confettiCanvas"></canvas>
+<main class="card">
+  <h1>Carole, will you be my Valentine? 💖</h1>
+  <div class="from">You just made my day!!!! ❤️ Yayy!!!!</div>
+  <section class="button-zone" id="zone">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </section>
+  <section class="result" id="result">
+    <h2>You just made Greg’s day 💕</h2>
+    <p>Can’t wait to celebrate with you ❤️</p>
+    <img src="Propose I Love You GIF.gif" alt="Cat holding rose" />
+  </section>
+</main>
+<script>
+const yesBtn=document.getElementById("yesBtn");
+const noBtn=document.getElementById("noBtn");
+const result=document.getElementById("result");
+yesBtn.onclick=()=>{document.getElementById("zone").style.display="none";result.style.display="block";}
+noBtn.onclick=e=>e.preventDefault();
+</script>
+</body>
+</html>
